@@ -11,13 +11,13 @@ export default function BlogContent({ content }: BlogContentProps) {
       .map((line, index) => {
         // 标题
         if (line.startsWith('# ')) {
-          return `<h1 class="text-3xl font-bold text-gray-900 mt-8 mb-4">${line.substring(2)}</h1>`
+          return `<h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mt-8 mb-4">${line.substring(2)}</h1>`
         }
         if (line.startsWith('## ')) {
-          return `<h2 class="text-2xl font-bold text-gray-900 mt-6 mb-3">${line.substring(3)}</h2>`
+          return `<h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-6 mb-3">${line.substring(3)}</h2>`
         }
         if (line.startsWith('### ')) {
-          return `<h3 class="text-xl font-semibold text-gray-900 mt-4 mb-2">${line.substring(4)}</h3>`
+          return `<h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mt-4 mb-2">${line.substring(4)}</h3>`
         }
 
         // 空行
@@ -28,12 +28,12 @@ export default function BlogContent({ content }: BlogContentProps) {
         // 代码块
         if (line.startsWith('```')) {
           const language = line.substring(3)
-          return `<pre class="bg-gray-100 rounded-lg p-4 my-4 overflow-x-auto"><code class="text-sm text-gray-800">${language}</code></pre>`
+          return `<pre class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 my-4 overflow-x-auto"><code class="text-sm text-gray-800 dark:text-gray-200">${language}</code></pre>`
         }
 
         // 段落
         if (line.trim()) {
-          return `<p class="text-gray-700 leading-relaxed mb-4">${line}</p>`
+          return `<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">${line}</p>`
         }
 
         return ''
@@ -42,9 +42,9 @@ export default function BlogContent({ content }: BlogContentProps) {
   }
 
   return (
-    <article className="prose prose-lg max-w-none">
+    <article className="prose prose-lg max-w-none dark:prose-invert">
       <div
-        className="text-gray-700 leading-relaxed"
+        className="text-gray-700 dark:text-gray-300 leading-relaxed"
         dangerouslySetInnerHTML={{
           __html: renderContent(content)
         }}

@@ -3,14 +3,14 @@ import { FaArrowDown } from 'react-icons/fa'
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-primary-50 via-white to-primary-50 py-20 sm:py-24">
+    <section className="relative bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-6xl">
             欢迎来到
-            <span className="text-primary-600"> MinePage</span>
+            <span className="text-primary-600 dark:text-primary-400"> MinePage</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600 dark:text-gray-300">
             一个专注于技术分享、生活记录和创意想法的个人博客。
             这里记录着我的学习历程、技术实践和生活感悟，希望能为你带来启发和帮助。
           </p>
@@ -33,7 +33,7 @@ export default function Hero() {
         {/* Scroll indicator */}
         <div className="mt-16 flex justify-center">
           <div className="animate-bounce">
-            <FaArrowDown className="h-6 w-6 text-gray-400" />
+            <FaArrowDown className="h-6 w-6 text-gray-400 dark:text-gray-500" />
           </div>
         </div>
       </div>

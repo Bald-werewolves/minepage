@@ -275,13 +275,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white dark:bg-gray-900 min-h-screen">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
         {/* Back button */}
         <div className="mb-8">
           <Link
             href="/blog"
-            className="inline-flex items-center text-gray-600 hover:text-primary-600 transition-colors duration-200"
+            className="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
           >
             <FaArrowLeft className="mr-2 h-4 w-4" />
             返回博客列表
@@ -291,22 +291,22 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Article header */}
         <header className="mb-8">
           <div className="mb-4">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300">
               {post.category}
             </span>
           </div>
 
-          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-4">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 sm:text-5xl mb-4">
             {post.title}
           </h1>
 
-          <p className="text-xl text-gray-600 mb-6">
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
             {post.excerpt}
           </p>
 
           {/* Article meta */}
-          <div className="flex items-center justify-between border-b border-gray-200 pb-6">
-            <div className="flex items-center space-x-6 text-sm text-gray-500">
+          <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-6">
+            <div className="flex items-center space-x-6 text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center">
                 <FaUser className="mr-2 h-4 w-4" />
                 <span>{post.author}</span>
@@ -318,7 +318,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <span>{post.readTime}</span>
             </div>
 
-            <button className="text-gray-400 hover:text-primary-600 transition-colors duration-200">
+            <button className="text-gray-400 dark:text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">
               <FaShare className="h-5 w-5" />
             </button>
           </div>
@@ -328,7 +328,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700"
+                className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
               >
                 <FaTag className="mr-1 h-3 w-3" />
                 {tag}

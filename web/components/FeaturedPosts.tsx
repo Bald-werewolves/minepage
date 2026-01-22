@@ -36,13 +36,13 @@ const featuredPosts = [
 
 export default function FeaturedPosts() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 sm:text-4xl">
             推荐文章
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
             精选优质内容，涵盖技术分享和生活感悟
           </p>
         </div>
@@ -52,33 +52,33 @@ export default function FeaturedPosts() {
             <article key={post.id} className="card group cursor-pointer">
               <div className="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
                 {/* Placeholder for image */}
-                <div className="w-full h-full bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                  <span className="text-primary-600 font-semibold">{post.category}</span>
+                <div className="w-full h-full bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/30 dark:to-primary-800/30 flex items-center justify-center">
+                  <span className="text-primary-600 dark:text-primary-400 font-semibold">{post.category}</span>
                 </div>
               </div>
               <div className="card-content">
-                <div className="flex items-center text-sm text-gray-500 mb-2">
+                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
                   <FaCalendar className="mr-1 h-4 w-4" />
                   <time dateTime={post.date}>{post.date}</time>
                   <span className="mx-2">•</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-primary-600 transition-colors duration-200 mb-2">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200 mb-2">
                   <Link href={`/blog/${post.id}`}>
                     {post.title}
                   </Link>
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center text-sm text-gray-500">
+                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                     <FaUser className="mr-1 h-4 w-4" />
                     <span>{post.author}</span>
                   </div>
                   <Link
                     href={`/blog/${post.id}`}
-                    className="text-primary-600 hover:text-primary-700 font-medium text-sm"
+                    className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm"
                   >
                     阅读更多 →
                   </Link>

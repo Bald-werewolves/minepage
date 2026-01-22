@@ -56,26 +56,26 @@ const socialLinks = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-gray-50 min-h-screen py-12">
+    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Hero section */}
         <div className="text-center mb-16">
           <div className="mx-auto h-32 w-32 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center mb-6">
             <span className="text-4xl font-bold text-white">M</span>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-4">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 sm:text-5xl mb-4">
             关于 MinePage
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             你好！我是 MinePage，一个热爱编程和分享的前端开发者。
             这里是我记录技术成长、生活感悟和创意想法的地方，希望能与你一起探索无限可能。
           </p>
         </div>
 
         {/* About content */}
-        <div className="bg-white rounded-lg shadow-md p-8 mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">关于我</h2>
-          <div className="prose prose-lg max-w-none text-gray-700">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-900/20 p-8 mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">关于我</h2>
+          <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300">
             <p className="mb-4">
               我是一名专注于前端开发的技术爱好者，对用户体验和代码质量有着执着的追求。
               在过去的几年里，我参与了多个大型项目的开发，从移动端应用到企业级系统，
@@ -100,26 +100,26 @@ export default function AboutPage() {
 
         {/* Skills section */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 text-center mb-12">
             技能专长
           </h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {skills.map((skill) => (
-              <div key={skill.title} className="bg-white rounded-lg shadow-md p-6 text-center">
-                <div className="mx-auto h-12 w-12 text-primary-600 mb-4">
+              <div key={skill.title} className="bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-900/20 p-6 text-center">
+                <div className="mx-auto h-12 w-12 text-primary-600 dark:text-primary-400 mb-4">
                   <skill.icon className="h-12 w-12" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
                   {skill.title}
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
                   {skill.description}
                 </p>
                 <div className="flex flex-wrap justify-center gap-2">
                   {skill.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-primary-100 text-primary-800 text-xs rounded-full"
+                      className="px-2 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 text-xs rounded-full"
                     >
                       {tech}
                     </span>
@@ -131,11 +131,11 @@ export default function AboutPage() {
         </div>
 
         {/* Contact section */}
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-900/20 p-8">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 text-center mb-8">
             联系我
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-center mb-8 max-w-2xl mx-auto">
             无论你是想讨论技术问题、寻求合作机会，还是只是想打个招呼，
             我都很乐意听到你的声音。选择你喜欢的方式联系我吧！
           </p>
@@ -145,17 +145,17 @@ export default function AboutPage() {
               <a
                 key={link.name}
                 href={link.href}
-                className="flex flex-col items-center p-6 rounded-lg border border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-colors duration-200 group"
+                className="flex flex-col items-center p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors duration-200 group"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="h-12 w-12 text-gray-400 group-hover:text-primary-600 transition-colors duration-200 mb-3">
+                <div className="h-12 w-12 text-gray-400 dark:text-gray-500 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200 mb-3">
                   <link.icon className="h-12 w-12" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">
                   {link.name}
                 </h3>
-                <p className="text-sm text-gray-600 text-center">
+                <p className="text-sm text-gray-600 dark:text-gray-300 text-center">
                   {link.description}
                 </p>
               </a>

@@ -70,14 +70,14 @@ const categories = ['全部', '前端开发', '编程语言', 'CSS', '框架', '
 
 export default function BlogPage() {
   return (
-    <div className="bg-gray-50 min-h-screen py-12">
+    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Page header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 sm:text-5xl">
             博客文章
           </h1>
-          <p className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             分享技术见解、生活感悟和创意想法，与你一起探索无限可能
           </p>
         </div>
@@ -87,7 +87,7 @@ export default function BlogPage() {
           {categories.map((category) => (
             <button
               key={category}
-              className="px-4 py-2 rounded-full text-sm font-medium bg-white text-gray-700 border border-gray-300 hover:bg-primary-50 hover:text-primary-700 hover:border-primary-300 transition-colors duration-200"
+              className="px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-400 hover:border-primary-300 dark:hover:border-primary-500 transition-colors duration-200"
             >
               {category}
             </button>
@@ -104,19 +104,19 @@ export default function BlogPage() {
         {/* Pagination placeholder */}
         <div className="mt-12 flex justify-center">
           <nav className="flex items-center space-x-2">
-            <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-not-allowed">
+            <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 cursor-not-allowed">
               上一页
             </button>
             <button className="px-3 py-2 rounded-md text-sm font-medium text-white bg-primary-600 border border-primary-600">
               1
             </button>
-            <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50">
+            <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
               2
             </button>
-            <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50">
+            <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
               3
             </button>
-            <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50">
+            <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
               下一页
             </button>
           </nav>
