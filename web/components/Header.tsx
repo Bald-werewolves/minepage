@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { HiMenu, HiX } from 'react-icons/hi'
+import ThemeToggle from './ThemeToggle'
 
 const navigation = [
   { name: '首页', href: '/' },
@@ -15,11 +16,11 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-200 transition-all duration-200">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-200 transition-all duration-200 dark:bg-gray-900/95 dark:border-gray-700">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex w-full items-center justify-between py-6">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-primary-600">
+            <Link href="/" className="text-2xl font-bold text-primary-600 dark:text-primary-400">
               MinePage
             </Link>
           </div>
@@ -30,18 +31,23 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-base font-medium text-gray-700 hover:text-primary-600 transition-colors duration-200"
+                className="text-base font-medium text-gray-700 hover:text-primary-600 transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary-400"
               >
                 {item.name}
               </Link>
             ))}
           </div>
 
+          {/* Desktop actions */}
+          <div className="hidden items-center space-x-4 lg:flex">
+            <ThemeToggle />
+          </div>
+
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <button
               type="button"
-              className="text-gray-400 hover:text-gray-500"
+              className="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">打开菜单</span>
@@ -62,12 +68,15 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-600"
+                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-600 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-primary-400"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
+              <div className="px-3 py-2">
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         )}
